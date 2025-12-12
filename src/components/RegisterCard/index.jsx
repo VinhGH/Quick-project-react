@@ -32,7 +32,7 @@ export default function RegisterCard({
             </CardHeader>
 
             <CardContent>
-                <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+                <div className="flex flex-col gap-4" >
                     <Input
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -55,7 +55,7 @@ export default function RegisterCard({
                         placeholder="Enter your password"
                     />
                     <Button
-                        type="submit"
+                        onClick={() => handleSubmit(email, username, password)}
                         className="w-full bg-[#5044E5] text-white"
                         disabled={loading}
                     >
@@ -67,7 +67,7 @@ export default function RegisterCard({
                             "Sign Up"
                         )}
                     </Button>
-                </form>
+                </div>
             </CardContent>
 
             <CardFooter className="flex justify-center pt-1 pb-0">

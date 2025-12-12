@@ -12,33 +12,31 @@ import UserManagement from "./pages/UserManagement";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
-    return (
-        <AuthContextProvider>
-            <BrowserRouter>
-                <Toaster />
-                <Routes>
-                    <Route element={<Layout />}>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/blog-details/:id" element={<BlogDetails />} />
-                        <Route path="/create-blog" element={<CreateBlog />} />
-                        <Route path="/my-posts" element={<MyPost />} />
-                        <Route
-                            path="/user-management"
-                            element={
-                                <ProtectedRoute role="admin">
-                                    <UserManagement />
-                                </ProtectedRoute>
-                            }
-                        />
-                    </Route>
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<SignupPage />} />
-                </Routes>
-            </BrowserRouter>
-        </AuthContextProvider>
-    );
+  return (
+    <AuthContextProvider>
+      <BrowserRouter>
+        <Toaster />
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/blog-details/:id" element={<BlogDetails />} />
+            <Route path="/create-blog" element={<CreateBlog />} />
+            <Route path="/my-posts" element={<MyPost />} />
+            <Route
+              path="/user-management"
+              element={
+                <ProtectedRoute role="admin">
+                  <UserManagement />
+                </ProtectedRoute>
+              }
+            />
+          </Route>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<SignupPage />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthContextProvider>
+  );
 }
 
 export default App;
-
-
