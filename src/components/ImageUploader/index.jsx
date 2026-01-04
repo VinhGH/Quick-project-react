@@ -23,8 +23,8 @@ export default function CloudinaryUpload({ onUpload }) {
             />
 
             {preview ? (
-                <div className="space-y-2">
-                    <div className="w-40 my-2">
+                <div className="space-y-2 flex flex-col items-center">
+                    <div className="my-2">
                         <img
                             src={preview}
                             alt="uploaded"
