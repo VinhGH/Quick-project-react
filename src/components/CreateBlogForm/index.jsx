@@ -27,7 +27,6 @@ const CreateBlog = ({
 
                 <div className="grid gap-6">
                     <div className="grid gap-2">
-                        <legend className="font-medium">Blog Image</legend>
                         {/* <div className="border border-dashed border-gray-400 rounded-lg p-4 grid justify-center">
               <label
                 htmlFor="blog-image"
@@ -66,22 +65,6 @@ const CreateBlog = ({
             </div> */}
                         <div className="border border-dashed border-gray-400 rounded-lg p-6">
                             <div className="flex flex-col items-center justify-center gap-3">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    className="tabler-icon tabler-icon-upload text-gray-600"
-                                >
-                                    <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
-                                    <path d="M7 9l5 -5l5 5"></path>
-                                    <path d="M12 4l0 12"></path>
-                                </svg>
                                 <ImageUploader onUpload={handleUploadFile} />
                             </div>
                         </div>
