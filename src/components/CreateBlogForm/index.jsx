@@ -27,42 +27,6 @@ const CreateBlog = ({
 
                 <div className="grid gap-6">
                     <div className="grid gap-2">
-                        {/* <div className="border border-dashed border-gray-400 rounded-lg p-4 grid justify-center">
-              <label
-                htmlFor="blog-image"
-                className="rounded-lg p-2 text-center cursor-pointer hover:bg-gray-50 transition"
-              >
-                <div className="text-sm text-gray-600 flex items-center justify-center">
-
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    className="tabler-icon tabler-icon-upload inline-block mr-2 w-5 h-5"
-                  >
-                    <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
-                    <path d="M7 9l5 -5l5 5"></path>
-                    <path d="M12 4l0 12"></path>
-                  </svg>
-                  
-                  Click to upload image
-                </div>
-
-                <Input
-                  onChange={(e) => handleUploadFile(e.target.files[0])}
-                  id="blog-image"
-                  type="file"
-                  accept="image/*"
-                  className="hidden"
-                />
-              </label>
-            </div> */}
                         <div className="border border-dashed border-gray-400 rounded-lg p-6">
                             <div className="flex flex-col items-center justify-center gap-3">
                                 <ImageUploader onUpload={handleUploadFile} />
