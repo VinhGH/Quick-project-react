@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Usermanagement from "@/components/UserTable";
+import Usermanagement from "@/components/UserTable/index.jsx";
 import {
   Dialog,
   DialogContent,
