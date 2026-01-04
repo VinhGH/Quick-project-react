@@ -3,6 +3,7 @@ import LoginCard from "@/components/LoginCard";
 import { AuthContext } from "@/contexts/authContext";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,13 +12,23 @@ export default function LoginPage() {
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-    if (!email) return toast.error("Email is required");
-    if (!password) return toast.error("Password is required");
+    // Check if email and password are provided
+    if (!email) {
+      toast.error("Email is required");
+      return;
+    }
+    if (!password) {
+      toast.error("Password is required");
+      return;
+    }
+
     setLoading(true);
     const success = await loginUser(email, password);
     setLoading(false);
 
-    if (success) navigate("/");
+    if (success) {
+      navigate("/");
+    }
   };
 
   return (

@@ -15,9 +15,9 @@ api.interceptors.request.use(
   (config) => {
     // Do something before request is sent
     // Add token to request headers if available
-    const token = localStorage.getItem("token");
-    if (token) {
-      config.headers["Authorization"] = `Bearer ${token}`;
+    const accessToken = localStorage.getItem("accessToken");
+    if (accessToken) {
+      config.headers["Authorization"] = `Bearer ${accessToken}`;
     }
     return config;
   },
@@ -40,8 +40,10 @@ api.interceptors.response.use(
       // that falls out of the range of 2xx
       switch (error.response.status) {
         case 401:
-          // Unauthorized - clear token and redirect to login
-          localStorage.removeItem("token");
+          // Unauthorized - clear all tokens and redirect to login
+          localStorage.removeItem("accessToken");
+          localStorage.removeItem("refreshToken");
+          localStorage.removeItem("userInfo");
           window.location.href = "/login";
           break;
         case 403:

@@ -30,8 +30,9 @@ const MyPost = () => {
     try {
       const response = await GetAllBlog();
       const allPosts = response.data.items;
-
-      setPosts([]);
+      //Lấy author id từ local storage với key userInfo => { "user": { "id": "68d7934b7c76684841165c1e", "role": "admin", "email": "admin@gmail.com", "username": "Admin" } }
+      const authorId = JSON.parse(localStorage.getItem("userInfo")).user.id;
+      setPosts(allPosts.filter((post) => post.author._id === authorId));
     } catch (err) {
       console.error("Lỗi khi tải blog:", err);
       setPosts([]);

@@ -16,6 +16,7 @@ function stripHTML(htmlString) {
 }
 
 export function Tablepost({ posts, openDialog }) {
+    console.log(posts);
     return (
         <div className="px-3 mx-auto max-w-7xl pt-4 pb-10">
             <h2 className="hero-title text-3xl sm:text-5xl font-semibold sm:leading-[4rem] text-[#5044E5] text-center mt-10 mb-8">

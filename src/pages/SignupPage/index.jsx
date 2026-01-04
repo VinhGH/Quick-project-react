@@ -10,11 +10,9 @@ export default function SignupPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  // const { signUpUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleRegister = async (email, username, password) => {
-    //check từng filed email, username, password có rỗng không
     if (!email) {
       toast.error("Email is required");
       return;

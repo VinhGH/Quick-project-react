@@ -12,12 +12,15 @@ import { AuthContext } from "../../contexts/authContext";
 
 export function DropdownMenuAuth() {
   const [open, setOpen] = useState(false);
-  const { logoutUserContext, role } = useContext(AuthContext);
+  // const { logoutUserContext, role } = useContext(AuthContext);
+  //lấy role từ localStorage userInfo.user.role
+  const role = JSON.parse(localStorage.getItem("userInfo"))?.user?.role || null;
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    logoutUserContext();
-    setOpen(false);
+    //remove localStorage userInfo + accessToken
+    localStorage.removeItem("userInfo");
+    localStorage.removeItem("accessToken");
     navigate("/login");
   };
 
