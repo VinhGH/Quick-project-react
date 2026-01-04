@@ -11,7 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 
-export function Dialogdelete({
+export function DialogDelete({
     open,
     setOpen,
     title = "Confirm Delete",
