@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Tablepost } from "@/components/TablePost";
+import { Tablepost } from "@/components/Tablepost";
 import { Dialogdelete } from "@/components/DialogDelete";
 import { GetAllBlog, DeleteBlog } from "@/services/api/blog";
 import { toast } from "react-hot-toast";
