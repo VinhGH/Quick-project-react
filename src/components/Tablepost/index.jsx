@@ -43,8 +43,12 @@ export function Tablepost({ posts, openDialog }) {
                         posts.map((post) => (
                             <TableRow key={post._id}>
                                 <TableCell className="font-medium">{post.title}</TableCell>
-                                <TableCell>{stripHTML(post.content)}</TableCell>
-                                <TableCell className="text-right flex justify-end gap-3">
+                                <TableCell>
+                                    {stripHTML(post.content).length > 100
+                                        ? stripHTML(post.content).substring(0, 100) + "..."
+                                        : stripHTML(post.content)}
+                                </TableCell>
+                                <TableCell className="text-right flex justify-end gap-3 ">
                                     <Link to={`/blog-details/${post._id}`}>
                                         <button className="bg-blue-500 text-white px-2 py-1 rounded-md cursor-pointer">
                                             <svg
