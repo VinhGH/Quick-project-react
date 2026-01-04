@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Tablepost } from "@/components/Tablepost";
-import { Dialogdelete } from "@/components/DialogDelete";
+import { Tablepost } from "@/components/TablePost";
+import { DialogDelete } from "@/components/DialogDelete";
 import { GetAllBlog, DeleteBlog } from "@/services/api/blog";
 import { toast } from "react-hot-toast";
 
@@ -49,7 +49,7 @@ const MyPost = () => {
     <div>
       <Tablepost posts={posts} openDialog={openDialog} />
 
-      <Dialogdelete
+      <DialogDelete
         open={openDelete}
         setOpen={setOpenDelete}
         blogTitle={titleToDelete}
